@@ -9,7 +9,7 @@ import com.example.proyecto.model.Lista_Producto
 
 class Productos : AppCompatActivity() {
 
-    //lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
