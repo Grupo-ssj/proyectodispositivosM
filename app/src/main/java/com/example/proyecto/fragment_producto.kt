@@ -32,6 +32,7 @@ class fragment_producto : Fragment(R.layout.fragment_producto) {
         recyclerView = view.findViewById(R.id.recyclerView_Producto)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
+
         adapter = Adapter_Producto(requireContext(),listaP) //get lista producto
         recyclerView.adapter = adapter
 

@@ -11,6 +11,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -75,6 +76,18 @@ class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelected
 
         val navigationView: NavigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
+
+        navigationView.setNavigationItemSelectedListener {
+            it.isChecked = true
+            when(it.itemId){
+                R.id.item1 -> navFragment(fragment_producto(),it.title.toString())
+
+
+
+            }
+            true
+        }
+
         //-------------------------------
 
         //delaracion e iniciacion del botonnavigation
@@ -89,13 +102,9 @@ class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelected
 
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {//funcion de prueba para navegar con los items
         when(item.itemId){
-            R.id.item1 -> mostrarproductos()
-
-//            R.id.item2 -> { supportFragmentManager.beginTransaction().apply { replace(R.id.fragmentcontainer, MessagesFragment())
-        //            commit}
-//            }
+            R.id.item1 -> navFragment(fragment_producto(),item.title.toString())
 
 
 
@@ -104,6 +113,14 @@ class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelected
         return true
     }
 
+    private fun navFragment(fragment:Fragment,title:String){
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frame_container,fragment)
+        fragmentTransaction.commit()
+        drawer.closeDrawer(GravityCompat.START)
+        setTitle(title)
+    }
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         toggle.syncState()
@@ -119,8 +136,5 @@ class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelected
             return true
         return super.onOptionsItemSelected(item)
     }
-    fun mostrarproductos(){
-        val intent = Intent(this,Productos()::class.java)
-        startActivity(intent)
-    }
+
 }
