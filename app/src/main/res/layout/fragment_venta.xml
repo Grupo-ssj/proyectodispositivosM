@@ -16,4 +16,46 @@
         android:layout_marginRight="700dp"
 
         android:src="@drawable/destornillador" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="216dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="315dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Spinner
+        android:id="@+id/pago"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="275dp" />
+
+    <Spinner
+        android:id="@+id/tamaño"
+        android:layout_width="111dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="190dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="355dp"
+        android:inputType="textPersonName" />
+
 </FrameLayout>
