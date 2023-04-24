@@ -16,8 +16,13 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
 import java.text.MessageFormat
 
+enum class ProviderType{
+    BASIC
+}
 
 class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     //variables del drawer
@@ -46,6 +51,9 @@ class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelected
                 return@OnNavigationItemSelectedListener true
             }
             R.id.item3 -> {
+                val bundle = intent.extras
+                val perfilFragment = fragment_perfil()
+                perfilFragment.arguments = bundle
                 supportFragmentManager.commit {
                     replace<fragment_perfil>(R.id.frame_container)
                     setReorderingAllowed(true)
