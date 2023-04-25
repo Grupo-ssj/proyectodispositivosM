@@ -87,12 +87,6 @@
             android:backgroundTint="#FF8A65"
             android:text="Google" />
 
-        <Button
-            android:id="@+id/facebookbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF8A65"
-            android:text="Facebook" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

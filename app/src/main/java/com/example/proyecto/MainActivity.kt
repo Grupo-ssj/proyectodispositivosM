@@ -1,5 +1,6 @@
 package com.example.proyecto
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,7 +22,8 @@ import com.google.firebase.auth.FirebaseAuth
 import java.text.MessageFormat
 
 enum class ProviderType{
-    BASIC
+    BASIC,
+    GOOGLE
 }
 
 class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
