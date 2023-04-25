@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,55 +8,57 @@
     android:background="@drawable/venta"
     tools:context=".fragment_venta">
 
+
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="156dp"
-        android:layout_height="142dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginRight="700dp"
+        android:id="@+id/foto_productoV"
+        android:layout_width="172dp"
+        android:layout_height="153dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="164dp"
+        android:src="@drawable/destornillador"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        android:src="@drawable/destornillador" />
+    <TextView
+        android:id="@+id/text_nombreProducto"
+        android:layout_width="364dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="120dp"
+        android:text="Nombre"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="216dp"
-        android:ems="10"
-        android:inputType="number" />
+    <TextView
+        android:id="@+id/text_precioP"
+        android:layout_width="215dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="332dp"
+        android:text="00.00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="137dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="315dp"
-        android:ems="10"
-        android:inputType="number" />
+    <TextView
+        android:id="@+id/text_descripcionP"
+        android:layout_width="353dp"
+        android:layout_height="63dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="404dp"
+        android:text="---------"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/pago"
-        android:layout_width="111dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="275dp" />
-
-    <Spinner
-        android:id="@+id/tamaño"
-        android:layout_width="111dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="190dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="355dp"
-        android:inputType="textPersonName" />
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

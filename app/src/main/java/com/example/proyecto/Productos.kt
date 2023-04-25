@@ -21,7 +21,7 @@ class Productos : AppCompatActivity() {
 
         //uso configuracion
         val listaP : MutableList<Lista_Producto> = mutableListOf()
-        val  adapterProducto = Adapter_Producto(this, listaP)
+        val  adapterProducto = Adapter_Producto(this, {Lista_Producto-> getProduct(Lista_Producto)}, listaP)
         recycleView_productos.adapter = adapterProducto
 
 
@@ -93,6 +93,10 @@ class Productos : AppCompatActivity() {
         listaP.add(producto6)
     }
 
+    fun getProduct(producto: Lista_Producto) {
+//        }
+
+    }
 
 
 }

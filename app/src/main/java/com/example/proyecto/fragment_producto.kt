@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto.adapter.Adapter_Producto
@@ -33,7 +35,7 @@ class fragment_producto : Fragment(R.layout.fragment_producto) {
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
 
-        adapter = Adapter_Producto(requireContext(),listaP) //get lista producto
+        adapter = Adapter_Producto(requireContext(),{Lista_Producto-> getProduct(Lista_Producto)},listaP) //get lista producto
         recyclerView.adapter = adapter
 
         val producto1 = Lista_Producto(
@@ -90,8 +92,22 @@ class fragment_producto : Fragment(R.layout.fragment_producto) {
 
 
     }
-     fun getListProduct() {
+    fun getProduct(producto: Lista_Producto) {
+        //creamos un bundle y pasamos al fragment de venta
+        val bundle = Bundle()
+        bundle.putString("nombre",producto.nombre)//debemos pasarle cada atributo que manejaremos
+        bundle.putString("descripcion",producto.descripcion)
+        bundle.putString("precio",producto.precio)
+        bundle.putString("foto",producto.foto)
+        val fragmentV = fragment_venta()
 
+        fragmentV.arguments= bundle
+        parentFragmentManager?.beginTransaction()?.replace(R.id.frame_container,fragmentV)?.commit()
+//        parentFragmentManager.commit {
+//            replace<fragment_venta>(R.id.frame_container)
+//            setReorderingAllowed(true)
+//            addToBackStack("principal")
+//        }
 
     }
 }
