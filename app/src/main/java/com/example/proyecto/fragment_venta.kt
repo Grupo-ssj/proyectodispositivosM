@@ -41,7 +41,6 @@ class fragment_venta : Fragment() {
 
         println(nombre.toString())  // para probar si se paso el dato
         return view
-
     }
 
 }
