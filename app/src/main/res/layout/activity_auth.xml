@@ -80,12 +80,12 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/googlebutton"
+            android:id="@+id/passwordRecoveryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#FF8A65"
-            android:text="Google" />
+            android:text="Recuperar Contraseña" />
 
     </LinearLayout>
 

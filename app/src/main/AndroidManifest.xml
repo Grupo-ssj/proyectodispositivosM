@@ -33,6 +33,11 @@
             android:name=".Productos"
             android:exported="true"/>
 
+        <!-- This activity is launched when the user wants to recover his password -->
+        <activity
+            android:name=".PasswordRecoveryActivity"
+            android:exported="true"/>
+
     </application>
 
 </manifest>

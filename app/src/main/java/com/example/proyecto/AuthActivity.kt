@@ -18,7 +18,6 @@ import com.google.firebase.auth.GoogleAuthProvider
 class AuthActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAuthBinding
-    private val GOOGLE_SIGN_IN = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,17 +58,11 @@ class AuthActivity : AppCompatActivity() {
             }
         }
 
-        binding.googlebutton.setOnClickListener{
-            val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build()
-            val googleClient = GoogleSignIn.getClient(this, googleConf)
-            googleClient.signOut()
-
-            startActivityForResult(googleClient.signInIntent, GOOGLE_SIGN_IN)
-
+        binding.passwordRecoveryButton.setOnClickListener(){
+            startActivity(Intent(this, PasswordRecoveryActivity::class.java))
         }
+
+
 
         sesion()
     }
@@ -118,36 +111,4 @@ class AuthActivity : AppCompatActivity() {
         prefs.apply()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(requestCode == GOOGLE_SIGN_IN){
-
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try{
-                val account = task.getResult(ApiException::class.java)
-
-                if (account != null){
-                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-
-                    FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
-
-                        if (it.isSuccessful){
-                            showHome(account.email ?: "", ProviderType.GOOGLE)
-                        } else{
-                            showAlert()
-                        }
-                    }
-                }
-
-            } catch (e: ApiException){
-                showAlert()
-            }
-
-
-
-
-
-        }
-    }
 }
