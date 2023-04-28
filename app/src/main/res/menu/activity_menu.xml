@@ -3,14 +3,10 @@
 
         <item android:id="@+id/item1"
             android:icon="@drawable/ic_home"
-            android:title="ejemplo productos"
+            android:title="Productos"
             />
-        <item android:id="@+id/item2"
-            android:icon="@drawable/ic_shop"
-            android:title="ejemplo ventas"/>
-    <item android:id="@+id/item3"
+    <item android:id="@+id/item2"
         android:icon="@drawable/ic_user"
-        android:title="ejemplo ventas"/>
-
+        android:title="Cerrar Cesion"/>
 
 </menu>

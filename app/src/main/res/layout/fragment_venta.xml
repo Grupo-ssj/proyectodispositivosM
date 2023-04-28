@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/venta"
+
     tools:context=".fragment_venta">
 
 
@@ -13,52 +13,103 @@
         android:id="@+id/foto_productoV"
         android:layout_width="172dp"
         android:layout_height="153dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:src="@drawable/destornillador"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_nombreProducto" />
 
     <TextView
         android:id="@+id/text_nombreProducto"
         android:layout_width="364dp"
         android:layout_height="25dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="12dp"
         android:text="Nombre"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnComprar" />
+
+    <Spinner
+        android:id="@+id/tamañoP"
+        android:layout_width="142dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="hola"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/foto_productoV"
+        app:layout_constraintTop_toBottomOf="@+id/text_nombreProducto" />
 
     <TextView
         android:id="@+id/text_precioP"
-        android:layout_width="215dp"
-        android:layout_height="36dp"
+        android:layout_width="105dp"
+        android:layout_height="39dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="00.00"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/foto_productoV" />
 
     <TextView
         android:id="@+id/text_descripcionP"
         android:layout_width="353dp"
         android:layout_height="63dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="404dp"
-        android:text="---------"
+
+        android:layout_marginTop="36dp"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_precioP" />
+
+    <EditText
+        android:id="@+id/cantidadP"
+        android:layout_width="85dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
+        android:text="0"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tamañoP" />
+
+    <Spinner
+        android:id="@+id/tipoPago"
+        android:layout_width="142dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="Pago"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toEndOf="@+id/text_precioP"
+        app:layout_constraintTop_toBottomOf="@+id/cantidadP" />
+
+    <Button
+        android:id="@+id/btnComprar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#162534"
+        android:text="Comprar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/teal_700" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

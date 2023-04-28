@@ -19,10 +19,6 @@ class fragment_producto : Fragment(R.layout.fragment_producto) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,6 +33,7 @@ class fragment_producto : Fragment(R.layout.fragment_producto) {
 
         adapter = Adapter_Producto(requireContext(),{Lista_Producto-> getProduct(Lista_Producto)},listaP) //get lista producto
         recyclerView.adapter = adapter
+
 
         val producto1 = Lista_Producto(
             "https://larealizaciongt.com/tienda/wp-content/uploads/2020/07/Destornillador-phillips-1-Thrifty-3-16x4-STANLEY.jpg",

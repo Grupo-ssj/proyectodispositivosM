@@ -43,25 +43,18 @@ class MainActivity: AppCompatActivity(), NavigationView.OnNavigationItemSelected
                 }
                 return@OnNavigationItemSelectedListener true
             }
-
             R.id.item2 -> {
-                supportFragmentManager.commit {
-                    replace<fragment_venta>(R.id.frame_container)
-                    setReorderingAllowed(true)
-                    addToBackStack("replacement")
-                }
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.item3 -> {
-                val bundle = intent.extras
                 val perfilFragment = fragment_perfil()
+                val bundle = Bundle()
+                bundle.putString("email", intent.getStringExtra("email"))
+                bundle.putString("provider", intent.getStringExtra("provider"))
                 perfilFragment.arguments = bundle
                 supportFragmentManager.commit {
-                    replace<fragment_perfil>(R.id.frame_container)
+                    replace(R.id.frame_container, perfilFragment)
                     setReorderingAllowed(true)
                     addToBackStack("replacement")
                 }
-                return@OnNavigationItemSelectedListener true
+                true
             }
         }
         false
